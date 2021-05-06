@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @Controller
 @RequestMapping(path="/FeedbackController")
 public class FeedbackController {
@@ -20,5 +22,11 @@ public class FeedbackController {
     public String addFeedback(feedback feedback){
         feedbackService.addFeedback(feedback);
         return "1";
+    }
+
+    @ResponseBody
+    @PostMapping(path="/getAllFeedback")
+    public List<feedback> getAllFeedback(){
+        return feedbackService.getAllFeedback();
     }
 }

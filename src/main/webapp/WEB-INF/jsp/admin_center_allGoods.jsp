@@ -45,6 +45,7 @@ List<goods> goodsList = (List<goods>)session.getAttribute("allgoods");
             <li><a href="/AdminController/to_admin_center_allorder">· 全部订单</a></li>
             <li><a href="/AdminController/to_admin_center_alluser">· 用户信息</a></li>
             <li><a href="/AdminController/to_admin_center_allGoods" class="active">· 商品信息</a></li>
+            <li><a href="/AdminController/to_user_feedback">· 用户反馈</a></li>
         </ul>
     </div>
     <div class="right_content clearfix">
@@ -57,6 +58,7 @@ List<goods> goodsList = (List<goods>)session.getAttribute("allgoods");
                 <th>商品类型</th>
                 <th>价格</th>
                 <th>折扣</th>
+                <th>销量</th>
                 <th>余量</th>
                 <th>简介</th>
             </tr>
@@ -72,6 +74,7 @@ List<goods> goodsList = (List<goods>)session.getAttribute("allgoods");
                     <td><%=goods.getType()%></td>
                     <td><%=goods.getPrice()%></td>
                     <td><%=goods.getDiscount()%></td>
+                    <td><%=goods.getSales()%></td>
                     <td><%=goods.getSurplus()%></td>
                     <td style="font-size: 10px"><%=goods.getInformation()%></td>
                     <td><button type="submit" id="searchuser" name="searchuser">修改</button></td>

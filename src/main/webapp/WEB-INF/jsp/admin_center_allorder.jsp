@@ -43,6 +43,7 @@
             <li><a href="/AdminController/to_admin_center_allorder" class="active">· 全部订单</a></li>
             <li><a href="/AdminController/to_admin_center_alluser">· 用户信息</a></li>
             <li><a href="/AdminController/to_admin_center_allGoods">· 商品信息</a></li>
+            <li><a href="/AdminController/to_user_feedback">· 用户反馈</a></li>
         </ul>
     </div>
 <%

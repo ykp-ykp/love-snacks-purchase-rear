@@ -1,14 +1,8 @@
 package com.ykp.snacks.Controller.Admin;
 
 import com.ykp.snacks.Dao.UserDao;
-import com.ykp.snacks.Service.Impl.AdminServiceImpl;
-import com.ykp.snacks.Service.Impl.GoodsServiceImpl;
-import com.ykp.snacks.Service.Impl.OrderServiceImpl;
-import com.ykp.snacks.Service.Impl.UserServiceImpl;
-import com.ykp.snacks.domain.admin;
-import com.ykp.snacks.domain.goods;
-import com.ykp.snacks.domain.order;
-import com.ykp.snacks.domain.user;
+import com.ykp.snacks.Service.Impl.*;
+import com.ykp.snacks.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +23,8 @@ public class AdminController {
     private OrderServiceImpl orderService;
     @Autowired
     private UserServiceImpl userService;
+    @Autowired
+    private FeedbackServiceImpl feedbackService;
 
 
     @RequestMapping("/vertifyAdmin")
@@ -128,6 +124,17 @@ public class AdminController {
         return "admin_center_alluser";
     }
 
+    @RequestMapping("/to_user_feedback")
+    public String to_user_feedback(HttpServletRequest request,HttpSession session){
+        String username = (String) session.getAttribute("name");
+        if(username==null|| username.equals("")){
+            return "redirect:/AdminController/notlogin";
+        }else{
+            List<feedback>  feedbackList = feedbackService.getAllFeedback();
+            session.setAttribute("allfeedback", feedbackList);
+        }
+        return "user_feedback";
+    }
 
 
     @RequestMapping("/orderDetail")

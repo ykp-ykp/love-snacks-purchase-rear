@@ -6,6 +6,8 @@ import com.ykp.snacks.domain.feedback;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class FeedbackServiceImpl implements FeedbackService {
 
@@ -15,5 +17,10 @@ public class FeedbackServiceImpl implements FeedbackService {
     @Override
     public void addFeedback(feedback feedback) {
         feedbackDao.addFeedback(feedback);
+    }
+
+    @Override
+    public List<feedback> getAllFeedback(){
+        return feedbackDao.getAllFeedback();
     }
 }
