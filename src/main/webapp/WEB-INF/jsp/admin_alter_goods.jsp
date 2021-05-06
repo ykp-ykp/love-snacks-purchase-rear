@@ -37,7 +37,7 @@
                 <ul>
                     <li>
                         <label>商品名:</label>
-                        <input type="text" name="goodsName" id="goodsName" readonly="readonly" value="">
+                        <input type="text" name="goodsName" id="goodsName" readonly="readonly" value="<%=goods.getName()%>">
                         <span class="error_tip">提示信息</span>
                     </li>
                     <li>
