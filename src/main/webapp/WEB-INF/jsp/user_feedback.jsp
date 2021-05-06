@@ -1,5 +1,4 @@
 <%@ page import="com.ykp.snacks.domain.feedback" %>
-<%@ page import="java.util.Arrays" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -42,14 +41,11 @@
     </div>
      <% List<feedback> feedbackList = (List<feedback>)session.getAttribute("allfeedback");%>
 
-
     <div class="right_content clearfix">
         <input type="text" id="lin" class="admin_search_user" placeholder="请输入需要搜索的内容">
         <table id="table-1" cellspacing='0' border="1" class="order_list_table w980">
 
-            <tr>
-                <th>微信用户</th><th>类型</th><th>时间</th><th>内容</th>
-            </tr>
+            <tr><th>微信用户</th><th>类型</th><th>时间</th><th>内容</th></tr>
 
             <%
                 for (int i = 0; i <feedbackList.size() ; i++) {
@@ -61,7 +57,7 @@
                 <td><%=feedback.getTime()%></td>
                 <td><%=feedback.getContent()%></td>
             </tr>
-<%}%>
+        <%}%>
         </table>
     </div>
 
@@ -72,6 +68,5 @@
             new Search(table, input)
         }
     </script>
-
 </body>
 </html>

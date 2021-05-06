@@ -24,7 +24,7 @@ public interface GoodsDao {
     @Select("select * from goods where name like concat('%',#{name},'%')")
     public List<goods> FuzzyQuery(String name);
 
-    @Update("update goods set price=#{price},surplus=#{surplus},discount=#{discount},information=#{information},image=#{image} where name=#{name}")
+    @Update("update goods set price=#{price},type=#{type},surplus=#{surplus},discount=#{discount},information=#{information},image=#{image} where name=#{name}")
     public void updateGoods(goods goods);
 
     @Update("update goods set surplus=#{surplus} where name=#{name}")

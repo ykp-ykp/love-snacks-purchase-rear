@@ -14,9 +14,6 @@
     <script type="text/javascript" src="/js/table_search.js"></script>
 </head>
 <body>
-<%
-List<goods> goodsList = (List<goods>)session.getAttribute("allgoods");
-%>
 <div class="header_con">
     <div class="header">
         <div class="fr">
@@ -35,7 +32,7 @@ List<goods> goodsList = (List<goods>)session.getAttribute("allgoods");
     <a href="/" class="logo fl"><img src="/images/lovesnack.jpg"></a>
     <div class="sub_page_name fl">|&nbsp;&nbsp;&nbsp;&nbsp;管理员中心</div>
 </div>
-
+<%List<goods> goodsList = (List<goods>)session.getAttribute("allgoods");%>
 <div class="main_con clearfix">
     <div class="left_menu_con clearfix">
         <h3>管理员中心</h3>

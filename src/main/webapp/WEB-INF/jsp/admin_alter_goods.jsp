@@ -31,12 +31,22 @@
         <%
             goods goods = (goods)request.getAttribute("alter_goods");
         %>
+        <input type="hidden" name="initialtype" id="initialtype" value="<%=goods.getType()%>">
         <div class="reg_form clearfix">
             <form action="/FileController/UpdateGoods" method="post" onsubmit="return admin_alter_goods_checkall()" id="reg_form" enctype="multipart/form-data">
                 <ul>
                     <li>
                         <label>商品名:</label>
-                        <input type="text" name="goodsName" id="goodsName" readonly="readonly" value="<%=goods.getName()%>">
+                        <input type="text" name="goodsName" id="goodsName" readonly="readonly" value="">
+                        <span class="error_tip">提示信息</span>
+                    </li>
+                    <li>
+                        <label>类型:</label>
+                        <select style="width: 288px;height:35px;" type="text" name="type" id="type" value="<%=goods.getType()%>" >
+                            <option>无辣不欢</option><option>休闲零食</option><option>饮料牛奶</option>
+                            <option>瓜子坚果</option><option>方便面</option><option>纸品清洁</option>
+                            <option>仙女专用</option>
+                        </select>
                         <span class="error_tip">提示信息</span>
                     </li>
                     <li>
@@ -71,7 +81,24 @@
             </form>
         </div>
     </div>
-
 </div>
+
+<script type="text/javascript">
+    $(function(){
+        //初始动态选中商品的原始数据类型
+        var initialtype = $('#initialtype').val();
+        //console.log(("initialtype = ",initialtype))
+        $("#type option").each(function() {
+            var txt = $(this).text(); //获取option值
+            if (txt == initialtype) {
+                $(this).attr("selected",true)
+            }
+
+        });
+
+    });
+
+</script>
+
 </body>
 </html>

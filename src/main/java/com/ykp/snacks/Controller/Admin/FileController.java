@@ -61,6 +61,7 @@ public class FileController {
         response.setCharacterEncoding("utf-8");
 
         String goodsName = (String)request.getParameter("goodsName");
+        String type = request.getParameter("type");
         double price = Double.parseDouble(request.getParameter("price"));
         //String type = request.getParameter("type");
         int surplus = Integer.parseInt(request.getParameter("surplus"));
@@ -78,14 +79,9 @@ public class FileController {
             imgUrl = jsonObject.getJSONObject("data").getJSONObject("url").getString("distribute");
         }
 
-        goods goods = new goods(goodsName,price,"",surplus,discount,0,imgUrl,information);
+        goods goods = new goods(goodsName,price,type,surplus,discount,0,imgUrl,information);
+        System.out.println("goods = "+goods);
         goodsService.updateGoods(goods);
-//        session.setAttribute("allgoods", goodsService.getAllGoods());
-//        PrintWriter out = response.getWriter();
-//        out.flush();
-//        out.println("<script>");
-//        out.println("alert('修改成功！');");
-//        out.println("</script>");
 
         return "redirect:/AdminController/to_admin_center_allGoods";
     }
