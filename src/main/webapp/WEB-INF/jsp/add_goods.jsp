@@ -25,7 +25,7 @@
 
     <div class="r_con fr">
         <div class="reg_title clearfix">
-            <h1>添加蔬菜</h1>
+            <h1>添加商品</h1>
         </div>
         <div class="reg_form clearfix">
             <form action="/FileController/addGoods" method="post" onsubmit="return add_goods_checkall()" id="reg_form" enctype="multipart/form-data">
@@ -40,7 +40,7 @@
                         <select style="width: 288px;height:35px;" type="text" name="type" id="type" value="" >
                             <option>无辣不欢</option><option>休闲零食</option><option>饮料牛奶</option>
                             <option>瓜子坚果</option><option>方便面</option><option>纸品清洁</option>
-                            <option>仙女专用</option>
+                            <option>仙女专用</option><option>日用百货</option><option>糖果果冻</option>
                         </select>
                         <span class="error_tip">提示信息</span>
                     </li>

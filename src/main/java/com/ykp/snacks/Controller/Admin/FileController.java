@@ -41,6 +41,7 @@ public class FileController {
         }else{
             //调用工具类的上传图片的方法，并返回服务器返回的jsonObject对象
             jsonObject = util.uploadImg(file);
+            System.out.println("imgURL = "+jsonObject);
             imgUrl = jsonObject.getJSONObject("data").getJSONObject("url").getString("distribute");
         }
         System.out.println(goodsName+"-"+price+"-"+surplus+"-"+information+"-"+imgUrl);

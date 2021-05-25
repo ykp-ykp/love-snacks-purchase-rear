@@ -47,7 +47,7 @@
     </div>
     <div class="right_content clearfix">
         <input type="text" id="lin" class="admin_search_user" placeholder="请输入需要搜索的内容">
-        <a href="/PageController/add_goods" style="margin-left: 200px;font-size: 20px">添加蔬菜</a>
+        <a href="/PageController/add_goods" style="margin-left: 200px;font-size: 20px">添加商品</a>
         <table id="table-1" cellspacing='0' border="1" class="order_list_table w980">
             <tr>
                 <th>图片</th>

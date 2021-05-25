@@ -79,7 +79,7 @@ public class util {
                 //参数名、文件名、RequestBody（可通过RequestBody.create创建）
                 .addFormDataPart("image", image.getName(), fileBody)
                 .addFormDataPart("apiType", apiType)
-                .addFormDataPart("privateStorage", privateStorage)
+//                .addFormDataPart("privateStorage", privateStorage)
                 .addFormDataPart("token", token)
                 .build();
 
